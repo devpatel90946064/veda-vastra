@@ -1,0 +1,6 @@
+{
+  "name": "Veda & Vastra | Indian E-Commerce & Fulfillment",
+  "description": "Production-ready Indian e-commerce platform featuring All-India Shiprocket courier fulfillment, Cash on Delivery (COD) serviceability, Razorpay checkout, and admin order management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

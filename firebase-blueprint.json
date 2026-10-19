@@ -1,0 +1,141 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "E-commerce product entity with stock, dimensions, and Indian pricing",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "maxLength": 200 },
+        "sku": { "type": "string", "maxLength": 50 },
+        "category": { "type": "string", "maxLength": 100 },
+        "price": { "type": "number" },
+        "mrp": { "type": "number" },
+        "stock": { "type": "number" },
+        "description": { "type": "string", "maxLength": 2000 },
+        "images": { "type": "array" },
+        "weightKg": { "type": "number" },
+        "lengthCm": { "type": "number" },
+        "breadthCm": { "type": "number" },
+        "heightCm": { "type": "number" },
+        "hsnCode": { "type": "string", "maxLength": 20 },
+        "isCodEligible": { "type": "boolean" },
+        "rating": { "type": "number" },
+        "originState": { "type": "string", "maxLength": 100 },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "name", "price", "stock", "sku"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Order entity capturing customer details, payment lifecycle, and shipping stages",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "orderNumber": { "type": "string", "maxLength": 50 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "customerEmail": { "type": "string", "maxLength": 150 },
+        "customerName": { "type": "string", "maxLength": 150 },
+        "customerPhone": { "type": "string", "maxLength": 20 },
+        "shippingAddress": { "type": "object" },
+        "items": { "type": "array" },
+        "subtotal": { "type": "number" },
+        "shippingCharges": { "type": "number" },
+        "codFee": { "type": "number" },
+        "discount": { "type": "number" },
+        "totalAmount": { "type": "number" },
+        "paymentMethod": { "type": "string", "enum": ["ONLINE", "COD"] },
+        "orderStatus": {
+          "type": "string",
+          "enum": ["PLACED", "CONFIRMED", "PROCESSING", "SHIPPED", "OUT_FOR_DELIVERY", "DELIVERED", "CANCELLED", "RTO"]
+        },
+        "paymentStatus": {
+          "type": "string",
+          "enum": ["PENDING", "PAID", "COD_PENDING", "REFUNDED", "FAILED"]
+        },
+        "shipmentStatus": {
+          "type": "string",
+          "enum": ["NOT_CREATED", "BOOKED", "PICKED_UP", "IN_TRANSIT", "DELIVERED", "EXCEPTION", "RTO"]
+        },
+        "razorpayOrderId": { "type": "string", "maxLength": 100 },
+        "razorpayPaymentId": { "type": "string", "maxLength": 100 },
+        "razorpaySignature": { "type": "string", "maxLength": 200 },
+        "shiprocketOrderId": { "type": "string", "maxLength": 100 },
+        "shiprocketShipmentId": { "type": "string", "maxLength": 100 },
+        "awbCode": { "type": "string", "maxLength": 100 },
+        "courierName": { "type": "string", "maxLength": 100 },
+        "trackingUrl": { "type": "string", "maxLength": 500 },
+        "shippingLabelUrl": { "type": "string", "maxLength": 500 },
+        "notes": { "type": "string", "maxLength": 500 },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "orderNumber", "subtotal", "totalAmount", "paymentMethod", "orderStatus", "paymentStatus", "shipmentStatus"]
+    },
+    "Admin": {
+      "title": "Admin",
+      "description": "Authorized administrators for back-office and fulfillment actions",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "maxLength": 128 },
+        "email": { "type": "string", "maxLength": 150 },
+        "role": { "type": "string", "enum": ["super_admin", "store_manager", "fulfillment_staff"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "AuditLog": {
+      "title": "AuditLog",
+      "description": "Immutable log of sensitive operations (refunds, shipment status overrides, stock adjustments)",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "action": { "type": "string", "maxLength": 100 },
+        "performedBy": { "type": "string", "maxLength": 150 },
+        "targetEntity": { "type": "string", "maxLength": 100 },
+        "targetId": { "type": "string", "maxLength": 100 },
+        "details": { "type": "object" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "action", "performedBy", "createdAt"]
+    },
+    "Setting": {
+      "title": "Setting",
+      "description": "Store configuration, pickup location, and courier preferences",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "storeName": { "type": "string", "maxLength": 150 },
+        "pickupPincode": { "type": "string", "maxLength": 10 },
+        "pickupAddress": { "type": "object" },
+        "defaultCodFee": { "type": "number" },
+        "freeShippingThreshold": { "type": "number" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": { "$ref": "Product" },
+      "description": "Collection of e-commerce products with stock levels"
+    },
+    "/orders/{orderId}": {
+      "schema": { "$ref": "Order" },
+      "description": "Collection of customer orders with payments and shipments"
+    },
+    "/admins/{adminId}": {
+      "schema": { "$ref": "Admin" },
+      "description": "System admin whitelist and role definitions"
+    },
+    "/audit_logs/{logId}": {
+      "schema": { "$ref": "AuditLog" },
+      "description": "Immutable audit trails for administrative operations"
+    },
+    "/settings/{settingId}": {
+      "schema": { "$ref": "Setting" },
+      "description": "Store settings and pickup location definitions"
+    }
+  }
+}

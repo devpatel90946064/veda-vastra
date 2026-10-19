@@ -1,0 +1,235 @@
+import { Product } from '../types';
+
+export const DEFAULT_PRODUCTS: Product[] = [
+  {
+    id: 'prod-001',
+    name: 'Chanderi Handloom Pure Silk Saree with Zari Border',
+    sku: 'CHN-SLK-001',
+    category: 'Handloom & Silks',
+    price: 4899,
+    mrp: 6999,
+    stock: 14,
+    description: 'Woven with featherlight pure silk and fine cotton yarns in Chanderi, Madhya Pradesh. Features traditional gold zari bootis and an ornate pallu. GI-tagged authentic craft.',
+    images: [
+      'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80'
+    ],
+    weightKg: 0.65,
+    lengthCm: 32,
+    breadthCm: 25,
+    heightCm: 4,
+    hsnCode: '50072010',
+    isCodEligible: true,
+    rating: 4.9,
+    reviewsCount: 48,
+    originState: 'Madhya Pradesh',
+    material: 'Pure Handloom Silk'
+  },
+  {
+    id: 'prod-002',
+    name: 'Royal Banarasi Kadwa Zari Brocade Dupatta',
+    sku: 'BAN-DUP-002',
+    category: 'Handloom & Silks',
+    price: 2450,
+    mrp: 3500,
+    stock: 22,
+    description: 'Masterfully handwoven in Varanasi using the heirloom Kadwa technique, where each motif is etched individually on pure georgette silk. A timeless festive staple.',
+    images: [
+      'https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=800&q=80'
+    ],
+    weightKg: 0.4,
+    lengthCm: 28,
+    breadthCm: 20,
+    heightCm: 3,
+    hsnCode: '50079000',
+    isCodEligible: true,
+    rating: 4.8,
+    reviewsCount: 36,
+    originState: 'Uttar Pradesh',
+    material: 'Banarasi Katan Silk'
+  },
+  {
+    id: 'prod-003',
+    name: 'Handcrafted Kashmiri Sozni Embroidered Pashmina Stole',
+    sku: 'KSH-PSH-003',
+    category: 'Handloom & Silks',
+    price: 7200,
+    mrp: 9800,
+    stock: 8,
+    description: 'Certified 100% fine Changthangi Cashmere wool from Ladakh, spun and hand-embroidered with delicate Sozni needlework by master artisans in the Kashmir valley.',
+    images: [
+      'https://images.unsplash.com/photo-1607522370275-f14206abe5d3?auto=format&fit=crop&w=800&q=80'
+    ],
+    weightKg: 0.3,
+    lengthCm: 26,
+    breadthCm: 18,
+    heightCm: 2,
+    hsnCode: '62142010',
+    isCodEligible: true,
+    rating: 5.0,
+    reviewsCount: 29,
+    originState: 'Jammu & Kashmir',
+    material: 'Grade-A Cashmere Pashmina'
+  },
+  {
+    id: 'prod-004',
+    name: 'Bastar Dhokra Lost-Wax Cast Brass Tribal Diya Stand',
+    sku: 'DHK-BRS-004',
+    category: 'Brass & Metalcraft',
+    price: 1850,
+    mrp: 2400,
+    stock: 18,
+    description: 'Ancient 4,000-year-old lost-wax bell metal casting from the tribal hearths of Bastar, Chhattisgarh. Non-ferrous cast brass depicting forest motifs and dancing figures.',
+    images: [
+      'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80'
+    ],
+    weightKg: 1.25,
+    lengthCm: 18,
+    breadthCm: 18,
+    heightCm: 16,
+    hsnCode: '83062990',
+    isCodEligible: true,
+    rating: 4.7,
+    reviewsCount: 41,
+    originState: 'Chhattisgarh',
+    material: 'Handcast Bell Metal Brass'
+  },
+  {
+    id: 'prod-005',
+    name: 'Jaipur Heirloom Blue Pottery Floral Centerpiece Vase (10")',
+    sku: 'JPR-BLP-005',
+    category: 'Pottery & Art',
+    price: 1299,
+    mrp: 1799,
+    stock: 25,
+    description: 'Crafted from quartz stone powder, Fuller’s earth, and natural cobalt oxide glass glaze. Fired low with hand-painted Persian floral motifs in royal azure blue.',
+    images: [
+      'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80'
+    ],
+    weightKg: 1.45,
+    lengthCm: 20,
+    breadthCm: 20,
+    heightCm: 30,
+    hsnCode: '69120010',
+    isCodEligible: true,
+    rating: 4.8,
+    reviewsCount: 52,
+    originState: 'Rajasthan',
+    material: 'Quartz Glazed Pottery'
+  },
+  {
+    id: 'prod-006',
+    name: 'Raw Himalayan Wild Forest Honey (Unpasteurized, 500g)',
+    sku: 'HIM-HNY-006',
+    category: 'Organic & Gourmet',
+    price: 680,
+    mrp: 850,
+    stock: 40,
+    description: 'Harvested from high-altitude wild beehives in the oak forests of Uttarakhand. Unprocessed, rich in natural pollen, bio-enzymes, and floral nectar.',
+    images: [
+      'https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=80'
+    ],
+    weightKg: 0.75,
+    lengthCm: 12,
+    breadthCm: 12,
+    heightCm: 16,
+    hsnCode: '04090000',
+    isCodEligible: true,
+    rating: 4.9,
+    reviewsCount: 89,
+    originState: 'Uttarakhand',
+    material: '100% Pure Forest Honey'
+  },
+  {
+    id: 'prod-007',
+    name: 'Mysore Pure Sandalwood Dhoop & Incense Cones Gift Box',
+    sku: 'MYS-SAN-007',
+    category: 'Aromatics & Wellness',
+    price: 450,
+    mrp: 600,
+    stock: 50,
+    description: 'Natural Santalum album wood dust blended with camphor, benzoin, and sacred herbal oils. Slow-burning charcoal-free cones that create a calming temple ambiance.',
+    images: [
+      'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80'
+    ],
+    weightKg: 0.35,
+    lengthCm: 15,
+    breadthCm: 12,
+    heightCm: 5,
+    hsnCode: '33074100',
+    isCodEligible: true,
+    rating: 4.9,
+    reviewsCount: 114,
+    originState: 'Karnataka',
+    material: 'Mysore Sandalwood'
+  },
+  {
+    id: 'prod-008',
+    name: 'Coorg Single-Estate Monsoon Malabar AA Whole Beans (250g)',
+    sku: 'CRG-COF-008',
+    category: 'Organic & Gourmet',
+    price: 590,
+    mrp: 750,
+    stock: 35,
+    description: 'Exposed to the humid sea winds of the Malabar coast in open curing works. Yields a rich mellow brew with notes of dark chocolate, spice, and zero acidity.',
+    images: [
+      'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=800&q=80'
+    ],
+    weightKg: 0.32,
+    lengthCm: 12,
+    breadthCm: 8,
+    heightCm: 22,
+    hsnCode: '09012190',
+    isCodEligible: true,
+    rating: 4.8,
+    reviewsCount: 67,
+    originState: 'Karnataka',
+    material: 'Arabica Monsoon Malabar'
+  },
+  {
+    id: 'prod-009',
+    name: 'Tanjore 22-Karat Gold Foil Ganesha Sacred Wall Art (12"x10")',
+    sku: 'TNJ-ART-009',
+    category: 'Pottery & Art',
+    price: 5400,
+    mrp: 7500,
+    stock: 6,
+    description: 'Created with teakwood base, Arabic gum limestone gesso relief, authentic Jaipur gems, and 22K pure gold foil embellishment by traditional Thanjavur artists.',
+    images: [
+      'https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?auto=format&fit=crop&w=800&q=80'
+    ],
+    weightKg: 1.8,
+    lengthCm: 35,
+    breadthCm: 30,
+    heightCm: 6,
+    hsnCode: '97011010',
+    isCodEligible: false, // High-value sacred art is prepaid only
+    rating: 5.0,
+    reviewsCount: 19,
+    originState: 'Tamil Nadu',
+    material: '22K Gold Foil & Teakwood'
+  },
+  {
+    id: 'prod-010',
+    name: 'Saharanpur Hand-Carved Sheesham Wood Masala Spice Box',
+    sku: 'SHP-WOD-010',
+    category: 'Brass & Metalcraft',
+    price: 1150,
+    mrp: 1600,
+    stock: 28,
+    description: '7-compartment spice dabba carved from solid Indian Rosewood (Sheesham) with brass inlay latches and a glass viewing lid. Sealed with food-safe botanical oils.',
+    images: [
+      'https://images.unsplash.com/photo-1590736969955-71cc94801759?auto=format&fit=crop&w=800&q=80'
+    ],
+    weightKg: 0.95,
+    lengthCm: 22,
+    breadthCm: 22,
+    heightCm: 8,
+    hsnCode: '44199090',
+    isCodEligible: true,
+    rating: 4.7,
+    reviewsCount: 54,
+    originState: 'Uttar Pradesh',
+    material: 'Solid Sheesham Wood'
+  }
+];
